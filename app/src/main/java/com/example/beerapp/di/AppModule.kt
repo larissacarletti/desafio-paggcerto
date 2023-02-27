@@ -20,7 +20,8 @@ object AppModule {
             .build()
             .create()
     }
-
-    fun provideRepository() : BeerRepository {}
+    fun provideRepository(beerApi: BeerApi) : BeerRepository {
+        return BeerRepository(beerApi)
+    }
 
 }

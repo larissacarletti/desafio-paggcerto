@@ -14,12 +14,11 @@ import javax.inject.Inject
 @HiltViewModel
 class BeerViewModel @Inject constructor (repository: BeerRepository): ViewModel() {
 
-    private val _beers = MutableLiveData<BeersItem>()
-    private val beers : LiveData<BeersItem> = _beers
+
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.getBeerDetails(beers)
+            repository.getBeerDetails()
         }
     }
 
