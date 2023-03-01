@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class BeerRepository @Inject constructor (private val beerApi: BeerApi) {
 
-    suspend fun getBeerDetails(): BeersItem? {
+    suspend fun getBeerDetails(): List<BeersItem>? {
         return beerApi.getBeer().body()
     }
 

@@ -14,8 +14,8 @@ import javax.inject.Inject
 @HiltViewModel
 class BeerViewModel @Inject constructor (repository: BeerRepository): ViewModel() {
 
-    private val _beers = MutableLiveData<BeersItem>()
-    private val beer : LiveData<BeersItem> = _beers
+    private val _beers = MutableLiveData<List<BeersItem>>()
+    private val beer : LiveData<List<BeersItem>> = _beers
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
