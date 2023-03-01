@@ -7,10 +7,7 @@ import retrofit2.http.GET
 interface BeerApi {
 
     @GET("v2/beers")
-    fun getAllBeers() : Response<List<BeersItem>>
-
-    @GET("v2/beers")
-    suspend fun getBeer() : BeersItem
+    suspend fun getBeer() : Response<BeersItem>
 
 
 }
