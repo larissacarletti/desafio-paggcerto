@@ -55,12 +55,12 @@ fun BeerCard(
 
     }
 }
-//@Composable
-//@Preview
-//fun BeerCardPreview() {
-//
-//    BeerCard(imageUrl = "" , backgroundColor = Color.White)
-//
-//
-//    }
+@Composable
+@Preview
+fun BeerCardPreview() {
+
+    BeerCard(imageUrl = "" , backgroundColor = Color.White, title = "")
+
+
+    }
 
