@@ -22,5 +22,4 @@ class BeerViewModel @Inject constructor (repository: BeerRepository): ViewModel(
             _beers.postValue(repository.getBeerDetails())
         }
     }
-
 }
