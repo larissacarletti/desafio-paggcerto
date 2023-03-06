@@ -3,6 +3,7 @@ package com.example.beerapp.di
 import com.example.beerapp.api.BeerApi
 import com.example.beerapp.repository.BeerRepository
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
@@ -13,6 +14,7 @@ import retrofit2.create
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    @Provides
     fun provideBeerApi() : BeerApi {
         return Retrofit.Builder()
             .baseUrl("https://api.punkapi.com/")
@@ -20,8 +22,9 @@ object AppModule {
             .build()
             .create()
     }
+
+    @Provides
     fun provideRepository(beerApi: BeerApi) : BeerRepository {
         return BeerRepository(beerApi)
     }
-
 }
